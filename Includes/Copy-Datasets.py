@@ -300,7 +300,7 @@ class CourseDataset:
 data_source_uri = "s3://dalhussein-courses/DE-Pro/datasets/bookstore/v1/"
 db_name = "bookstore_eng_pro"
 
-data_catalog = 'de_professional'
+data_catalog = 'databricks_de_professional'
 bookstore = CourseDataset(data_source_uri, data_catalog, db_name)
 
 bookstore.create_database()

@@ -43,7 +43,7 @@ def process_bronze():
                       .option("mergeSchema", True)
                       .partitionBy("topic", "year_month")
                       .trigger(availableNow=True)
-                      .table("de_professional.data_modeling.bronze"))
+                      .table("databricks_de_professional.bookstore_eng_pro.bronze"))
     
     query.awaitTermination()
 
@@ -59,13 +59,13 @@ display(batch_df)
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC SELECT * FROM de_professional.data_modeling.bronze
+# MAGIC SELECT * FROM databricks_de_professional.bookstore_eng_pro.bronze
 
 # COMMAND ----------
 
 # MAGIC %sql
 # MAGIC SELECT DISTINCT(topic)
-# MAGIC FROM de_professional.data_modeling.bronze
+# MAGIC FROM databricks_de_professional.bookstore_eng_pro.bronze
 
 # COMMAND ----------
 
@@ -78,4 +78,4 @@ process_bronze()
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC SELECT COUNT(*) FROM de_professional.data_modeling.bronze
+# MAGIC SELECT COUNT(*) FROM databricks_de_professional.bookstore_eng_pro.bronze
